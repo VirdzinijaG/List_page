@@ -11,6 +11,10 @@ table {
     width: 80%;
 }
 
+.vidus:hover {
+   border: solid 1px silver;
+}
+
 .title {
     width: 50%;
     text-align: center;

@@ -12,6 +12,13 @@ function App() {
         });
     }, []);
 
+    useEffect((id) => {
+        axios.get("https://jsonplaceholder.typicode.com/posts/" + id).then((response) => {
+            setPosts(response.data[0]);
+        });
+    }, []);
+
+
 
     return (
         <>

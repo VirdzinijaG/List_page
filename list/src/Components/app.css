@@ -1,0 +1,37 @@
+table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vidus {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.title {
+    width: 50%;
+    text-align: center;
+}
+
+.body {
+    width: 50%;
+    text-align: center;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+    width: 80%;
+}
+.headTitle {
+    width: 100%;
+    text-align: center;
+}
+.headBody {
+    text-align: center;
+    width: 100%;
+}

@@ -1,6 +1,6 @@
 import './app.css'
 
-function Post({ data }) {
+function Posts({ data }) {
     return (
         <div>
             <table className="table">
@@ -19,4 +19,4 @@ function Post({ data }) {
     );
 }
 
-export default Post;
+export default Posts;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Post from './Post';
+import Posts from './Posts';
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
 
     return (
         <>
-            {posts.map((post) => (<Post key={post.id} data={post} />))}
+            {posts.map((post) => (<Posts key={post.id} data={post} />))}
         </>
     )
 }

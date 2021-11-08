@@ -1,30 +1,37 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
-import Posts from './Posts';
+import Todo1 from './Todo1';
+import TodoOne from './TodoOne';
 
 function App() {
 
-    const [posts, setPosts] = useState([]);
+    const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
-            setPosts(response.data);
-        });
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(function (response) {
+                setTodos(response.data);
+            })
     }, []);
-
-    useEffect((id) => {
-        axios.get("https://jsonplaceholder.typicode.com/posts/" + id).then((response) => {
-            setPosts(response.data[0]);
-        });
-    }, []);
-
 
 
     return (
-        <>
-            {posts.map((post) => (<Posts key={post.id} data={post} />))}
-        </>
-    )
+        <Router>
+            <Switch>
+                <Route path={'/:todoId'}>
+                    <div className="todo-container">
+                        <TodoOne todos={todos} ></TodoOne>
+                    </div>
+                </Route>
+                <Route path='/'>
+                    <div className="todo-container">
+                        {todos.map((todo) => (<Todo1 key={todo.id} data={todo} ></Todo1>))}
+                    </div>
+                </Route>
+            </Switch>
+        </Router>
+    );
 }
 
 export default App;

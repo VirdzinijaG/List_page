@@ -17,11 +17,13 @@ function App() {
 
 
     return (
+        <>
+        <h1>Posts List</h1>
         <Router>
             <Switch>
                 <Route path={'/:todoId'}>
                     <div className="todo-container">
-                        <TodoOne todos={todos} ></TodoOne>
+                        <TodoOne todos={todos}></TodoOne>
                     </div>
                 </Route>
                 <Route path='/'>
@@ -31,6 +33,7 @@ function App() {
                 </Route>
             </Switch>
         </Router>
+        </>
     );
 }
 

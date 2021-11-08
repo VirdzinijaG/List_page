@@ -1,5 +1,6 @@
-
+import './app.css';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function TodoOne(props) {
 
@@ -7,18 +8,17 @@ function TodoOne(props) {
 
     if (props.todos.length === 0) {
         return (
-            <h1>Todo loadig...</h1>
+            <h1> Loadig...</h1>
         )
     }
+
 
     return (
         <div className="todo">
             <div className='id'>{props.todos[todoId - 1].id}</div>
             <div className="title">{props.todos[todoId - 1].title}</div>
             <div className="title">{props.todos[todoId - 1].body}</div>
-            <div className="status" onClick={() => props.sniuriukas(props.todos[todoId - 1].id)} style={
-                { backgroundColor: props.todos[todoId - 1].completed === false ? 'red' : 'green' }
-            }></div>
+            <Link to={'/'}> <button>Back</button></Link>
         </div>
     );
 }

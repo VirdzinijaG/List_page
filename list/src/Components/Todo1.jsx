@@ -1,4 +1,4 @@
-import './app.css'
+import './app.css';
 import { Link } from 'react-router-dom';
 
 function Todo(props) {
@@ -11,7 +11,7 @@ function Todo(props) {
                     <th className="headTitle">Title</th>
                     <th className="headBody">Body</th>
                 </tr>
-                <Link to={'/' + props.data.id}><tr className="vidus">
+                <Link style={{textDecoration:'none'}} to={'/' + props.data.id}><tr className="vidus">
                     <td className='id'>{props.data.id}</td>
                     <td className="title">{props.data.title}</td>
                     <td className="body">{props.data.body}</td>

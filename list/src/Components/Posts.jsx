@@ -1,7 +1,7 @@
 import './app.css';
 import { Link } from 'react-router-dom';
 
-function Todo(props) {
+function Posts(props) {
 
     return (
         <div>
@@ -22,4 +22,4 @@ function Todo(props) {
 }
 
 
-export default Todo;
+export default Posts;

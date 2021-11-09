@@ -17,15 +17,23 @@ function App() {
             })
     }, []);
 
+    const Add = (data) => {
+        axios.post('https://jsonplaceholder.typicode.com/posts/', data)
+            .then(function (response) {
+                console.log(response);
+            })
+    }
+
+
 
     return (
         <>
             <h1>Posts List</h1>
-            <a href="/newPost" className="new" style={{textDecoration:'none'}}>New post</a>
+            <a href="/newPost" className="new" style={{ textDecoration: 'none' }}>New post</a>
             <Router>
                 <Switch>
                     <Route path={'/newPost'}>
-                        <NewPost posts={posts}></NewPost>
+                        <NewPost posts={posts} add={Add}></NewPost>
                     </Route>
                     <Route path={'/:postId'}>
                         <PostOne posts={posts}></PostOne>

@@ -32,7 +32,6 @@ function App() {
         <>
             <h1>Posts List</h1>
             <Router>
-                <Link style={{ textDecoration: 'none' }} to={'/newPost'}><button className="newButton">New post</button></Link>
                 <Switch>
                     <Route path={'/newPost'}>
                         <NewPost add={Add}></NewPost>
@@ -41,6 +40,14 @@ function App() {
                         <PostOne posts={posts}></PostOne>
                     </Route>
                     <Route path='/'>
+                        <Link style={{ textDecoration: 'none' }} to={'/newPost'}><button className="newButton">New post</button></Link>
+                        <table className="table">
+                            <tr className="head">
+                                <th className="headId">ID</th>
+                                <th className="headTitle">Title</th>
+                                <th className="headBody">Body</th>
+                            </tr>
+                        </table>
                         {posts.map((post) => (<Posts key={post.id} data={post}></Posts>))}
                     </Route>
                 </Switch>

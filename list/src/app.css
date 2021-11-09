@@ -3,14 +3,12 @@ table {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
 }
 
 .vidus {
     display: flex;
     flex-direction: row;
     width: 80vw;
-    text-decoration: none;
     color: grey;
 }
 
@@ -33,7 +31,7 @@ table {
     display: flex;
     flex-direction: row;
     background-color: grey;
-    width: 80%;
+    width: 80vw;
     color: white;
 }
 .headTitle {

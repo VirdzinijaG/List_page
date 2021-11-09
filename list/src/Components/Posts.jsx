@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Posts(props) {
 
     return (
+        <>
         <div>
             <table className="table">
                 <tr className="head">
@@ -18,6 +19,7 @@ function Posts(props) {
                 </tr></Link>
             </table>
         </div>
+        </>
     );
 }
 

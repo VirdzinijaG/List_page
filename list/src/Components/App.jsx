@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Posts from './Posts';
 import PostOne from './PostOne';
+import NewPost from './NewPost';
+import '../app.css';
 
 function App() {
 
@@ -19,8 +21,12 @@ function App() {
     return (
         <>
             <h1>Posts List</h1>
+            <a href="/newPost" className="new" style={{textDecoration:'none'}}>New post</a>
             <Router>
                 <Switch>
+                    <Route path={'/newPost'}>
+                        <NewPost posts={posts}></NewPost>
+                    </Route>
                     <Route path={'/:postId'}>
                         <PostOne posts={posts}></PostOne>
                     </Route>

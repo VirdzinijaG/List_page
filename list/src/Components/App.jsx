@@ -5,6 +5,8 @@ import Posts from './Posts';
 import PostOne from './PostOne';
 import NewPost from './NewPost';
 import '../app.css';
+import { Link } from 'react-router-dom';
+
 
 function App() {
 
@@ -29,11 +31,11 @@ function App() {
     return (
         <>
             <h1>Posts List</h1>
-            <a href="/newPost" className="new" style={{ textDecoration: 'none' }}>New post</a>
             <Router>
+                <Link style={{ textDecoration: 'none' }} to={'/newPost'}><button className="newButton">New post</button></Link>
                 <Switch>
                     <Route path={'/newPost'}>
-                        <NewPost posts={posts} add={Add}></NewPost>
+                        <NewPost add={Add}></NewPost>
                     </Route>
                     <Route path={'/:postId'}>
                         <PostOne posts={posts}></PostOne>

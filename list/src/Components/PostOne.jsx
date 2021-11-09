@@ -14,10 +14,12 @@ function PostOne(props) {
 
 
     return (
-        <div>
-            <div className='id'>{props.posts[postId - 1].id}</div>
-            <div className="title">{props.posts[postId - 1].title}</div>
-            <div className="title">{props.posts[postId - 1].body}</div>
+        <div className="post">
+            <div className="postId">{props.posts[postId - 1].id} post details</div>
+            <span>Title</span>
+            <div className="postTitle">{props.posts[postId - 1].title}</div>
+            <span>Body</span>
+            <div className="postBody">{props.posts[postId - 1].body}</div>
             <Link to={'/'}> <button>Back</button></Link>
         </div>
     );

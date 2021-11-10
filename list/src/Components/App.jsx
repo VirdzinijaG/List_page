@@ -30,16 +30,18 @@ function App() {
 
     return (
         <>
-            <h1>Posts List</h1>
             <Router>
                 <Switch>
                     <Route path={'/newPost'}>
+                        <h1>New record form</h1>
                         <NewPost add={Add}></NewPost>
                     </Route>
                     <Route path={'/:postId'}>
+                        <h1>Details page</h1>
                         <PostOne posts={posts}></PostOne>
                     </Route>
                     <Route path='/'>
+                        <h1>List page</h1>
                         <Link style={{ textDecoration: 'none' }} to={'/newPost'}><button className="newButton">New post</button></Link>
                         <table className="table">
                             <tr className="head">

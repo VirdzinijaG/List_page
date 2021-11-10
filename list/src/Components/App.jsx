@@ -22,7 +22,7 @@ function App() {
     const Add = (data) => {
         axios.post('https://jsonplaceholder.typicode.com/posts/', data)
             .then(function (response) {
-                console.log(response);
+                console.log(response.data);
             })
     }
 
